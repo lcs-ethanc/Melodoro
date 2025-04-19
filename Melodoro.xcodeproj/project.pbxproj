@@ -11,6 +11,7 @@
 		4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0252DB43519008888FA /* MelodoroApp.swift */; };
 		4460A0292DB43519008888FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4460A0212DB43519008888FA /* Preview Assets.xcassets */; };
 		4460A02A2DB43519008888FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4460A0232DB43519008888FA /* Assets.xcassets */; };
+		4460A02F2DB438A6008888FA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A02E2DB438A6008888FA /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4460A0232DB43519008888FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4460A0242DB43519008888FA /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		4460A0252DB43519008888FA /* MelodoroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodoroApp.swift; sourceTree = "<group>"; };
+		4460A02E2DB438A6008888FA /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		4460A02C2DB4352D008888FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4460A02E2DB438A6008888FA /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				4460A0272DB43519008888FA /* LandingView.swift in Sources */,
 				4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */,
+				4460A02F2DB438A6008888FA /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
