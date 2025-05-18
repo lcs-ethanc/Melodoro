@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440B661E2DDA3CC3005DC7A6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440B661D2DDA3CC3005DC7A6 /* UserSettings.swift */; };
+		440B66202DDA3DF4005DC7A6 /* SessionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440B661F2DDA3DF4005DC7A6 /* SessionLog.swift */; };
 		4460A0272DB43519008888FA /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0242DB43519008888FA /* LandingView.swift */; };
 		4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0252DB43519008888FA /* MelodoroApp.swift */; };
 		4460A0292DB43519008888FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4460A0212DB43519008888FA /* Preview Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		440B661D2DDA3CC3005DC7A6 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		440B661F2DDA3DF4005DC7A6 /* SessionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLog.swift; sourceTree = "<group>"; };
 		4460A0102DB434F5008888FA /* Melodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4460A0212DB43519008888FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4460A0232DB43519008888FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				4460A02E2DB438A6008888FA /* Session.swift */,
+				440B661D2DDA3CC3005DC7A6 /* UserSettings.swift */,
+				440B661F2DDA3DF4005DC7A6 /* SessionLog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4460A0272DB43519008888FA /* LandingView.swift in Sources */,
+				440B661E2DDA3CC3005DC7A6 /* UserSettings.swift in Sources */,
 				4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */,
+				440B66202DDA3DF4005DC7A6 /* SessionLog.swift in Sources */,
 				4460A02F2DB438A6008888FA /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
