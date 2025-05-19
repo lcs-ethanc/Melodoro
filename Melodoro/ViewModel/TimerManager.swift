@@ -36,7 +36,7 @@ class TimerManager {
                 self.timeRemaining += -1
                 print("Time remaining: \(self.timeRemaining)")
             } else {
-                //self.switchMode()
+                self.switchMode()
             }
         }
     }
@@ -48,7 +48,7 @@ class TimerManager {
         //Toggle between focus and break
         focusTime.toggle()
         
-        //Set new time depending on mode
+        //Switch to timer of either focus or duration
         if focusTime {
             timeRemaining = focusDuration
         } else {
@@ -57,7 +57,12 @@ class TimerManager {
         
         print ("Switched to \(focusTime ? "Focus" : "Break") mode")
         
-        //New session
+        //Start timer
         start()
+    }
+    
+    func pause() {
+        timer?.invalidate() //Stops timer from running if timer is not nil
+        running = false //Changes label of "running" to false
     }
 }
