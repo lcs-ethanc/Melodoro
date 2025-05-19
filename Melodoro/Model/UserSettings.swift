@@ -8,8 +8,9 @@
 import Foundation
 
 struct UserSettings {
-    var defaultFocusDuration: Int       // in minutes
-    var defaultBreakDuration: Int       // in minutes
-    var genreToggles: [String:Bool]     // e.g., "lofi", "nature", "piano"
+    var defaultFocusDuration: Int
+    var defaultBreakDuration: Int       
+    var genreToggles: [String:Bool]
     var notificationsEnabled: Bool
+    var soundToggle: Bool
 }
