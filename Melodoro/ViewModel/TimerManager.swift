@@ -24,4 +24,40 @@ class TimerManager {
         self.focusDuration = focusDuration
         self.breakDuration = breakDuration
     }
+    
+    func start () {
+        running = true //Timer is running
+        
+        //Timer repeats every 1 second
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            
+            //If timer is above 0, minus one to timer (self = this instance)
+            if self.timeRemaining > 0 {
+                self.timeRemaining += -1
+                print("Time remaining: \(self.timeRemaining)")
+            } else {
+                //self.switchMode()
+            }
+        }
+    }
+    
+    func switchMode() {
+        //Stop timer
+        pause()
+        
+        //Toggle between focus and break
+        focusTime.toggle()
+        
+        //Set new time depending on mode
+        if focusTime {
+            timeRemaining = focusDuration
+        } else {
+            timeRemaining = breakDuration
+        }
+        
+        print ("Switched to \(focusTime ? "Focus" : "Break") mode")
+        
+        //New session
+        start()
+    }
 }
