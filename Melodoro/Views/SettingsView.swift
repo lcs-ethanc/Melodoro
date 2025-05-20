@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var userSettings = UserSettings(
+        defaultFocusDuration: 25,
+        defaultBreakDuration: 5,
+        genreToggles: [
+            "Lofi": true,
+            "Nature": true,
+            "Jazz": true,
+            "Classical": true,
+            "Piano": true,
+            "Instrumental": true,
+            "Techno": true,
+            "Ambient": true
+        ],
+        soundToggle: true
+    )
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Timer Durations")
+                            .font(.headline)
     }
 }
 

@@ -11,6 +11,5 @@ struct UserSettings {
     var defaultFocusDuration: Int
     var defaultBreakDuration: Int       
     var genreToggles: [String:Bool]
-    var notificationsEnabled: Bool
     var soundToggle: Bool
 }
