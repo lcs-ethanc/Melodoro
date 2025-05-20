@@ -15,11 +15,19 @@ struct TimerView: View {
         focusDuration: 1500,
         breakDuration: 300
     )
-
+    @State var soundOn = true
     
     var body: some View {
         VStack {
-            
+            Button(action: {
+                                soundOn.toggle()
+                            }) {
+                                Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                                    .foregroundColor(.primary)
+                                    .frame(width:24,height:24)
+                            }
+                            .padding()
+
             //Mode text
             if timerManager.focusTime {
                 Text("Focus Time")

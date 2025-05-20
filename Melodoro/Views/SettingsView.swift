@@ -21,8 +21,7 @@ struct SettingsView: View {
             "Instrumental": true,
             "Techno": true,
             "Ambient": true
-        ],
-        soundToggle: true
+        ]
     )
     var body: some View {
         Text("Timer Durations")
