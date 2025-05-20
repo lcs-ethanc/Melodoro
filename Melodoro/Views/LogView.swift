@@ -12,7 +12,7 @@ struct LogView: View {
     var body: some View {
         NavigationStack{
             List {
-                ForEach(blogManager.logs) {  log in
+                ForEach(blogManager.logs.reversed()) {  log in
                     VStack{
                         Text(log.sessionDate.formatted())
                         Text("Focus: \(log.focusDuration) sec")

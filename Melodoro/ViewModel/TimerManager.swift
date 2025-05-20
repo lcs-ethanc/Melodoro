@@ -67,14 +67,14 @@ class TimerManager: ObservableObject { //to watch for changes
                 print("Logged a completed cycle.")
                 completedFocus = false
             }
-        //Toggle between focus and break
-        focusTime.toggle()
-        
         //Set completed focus to true if from focus to break
         if !focusTime {
             completedFocus = true
         }
-
+        
+        //Toggle between focus and break
+        focusTime.toggle()
+        
         
         //Switch to timer of either focus or duration
         if focusTime {
