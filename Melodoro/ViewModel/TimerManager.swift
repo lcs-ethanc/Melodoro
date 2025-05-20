@@ -13,23 +13,24 @@ class TimerManager: ObservableObject { //to watch for changes
     @Published var running: Bool = false
     @Published var focusTime: Bool = true
     
-    let focusDuration: Int
-    let breakDuration: Int
+
     
-    var sessionLogManager: SessionLogManager 
+    var userSettings: UserSettings
+    var sessionLogManager: SessionLogManager
     
-    var timeElapsed: Int = 0
+    var focusTimeElapsed: Int = 0
+    var breakTimeElapsed: Int = 0
     var completedFocus = false
     
-    init(timer: Timer? = nil, timeRemaining: Int, running: Bool, focusTime: Bool, focusDuration: Int, breakDuration: Int, sessionLogManager: SessionLogManager, timeElapsed: Int, completedFocus: Bool = false) {
+    init(timer: Timer? = nil, timeRemaining: Int, running: Bool, focusTime: Bool, userSettings: UserSettings, sessionLogManager: SessionLogManager, focusTimeElapsed: Int, breakTimeElapsed: Int, completedFocus: Bool = false) {
         self.timer = timer
         self.timeRemaining = timeRemaining
         self.running = running
         self.focusTime = focusTime
-        self.focusDuration = focusDuration
-        self.breakDuration = breakDuration
+        self.userSettings = userSettings
         self.sessionLogManager = sessionLogManager
-        self.timeElapsed = timeElapsed
+        self.focusTimeElapsed = focusTimeElapsed
+        self.breakTimeElapsed = breakTimeElapsed
         self.completedFocus = completedFocus
     }
     
@@ -46,7 +47,11 @@ class TimerManager: ObservableObject { //to watch for changes
             //If timer is above 0, minus one to timer (self = this instance)
             if self.timeRemaining > 0 {
                 self.timeRemaining += -1
-                self.timeElapsed += 1
+                if self.focusTime{
+                    self.focusTimeElapsed += 1
+                } else{
+                    self.breakTimeElapsed += 1
+                }
                 print("Time remaining: \(self.timeRemaining)")
             } else {
                 self.switchMode()
@@ -58,19 +63,27 @@ class TimerManager: ObservableObject { //to watch for changes
         //Stop timer
         pause()
         
-        if focusTime == false && completedFocus {
-            sessionLogManager.addLog(
-                focus: focusDuration,
-                breakTime: breakDuration,
-                    completed: true
-                )
-                print("Logged a completed cycle.")
-                completedFocus = false
-            }
         //Set completed focus to true if from focus to break
         if !focusTime {
             completedFocus = true
         }
+        
+        //Log if from break --> focus
+        if focusTime == false && completedFocus {
+            sessionLogManager.addLog(
+                focus: focusTimeElapsed,
+                breakTime: breakTimeElapsed,
+                    completed: true
+                )
+                print("Logged a completed cycle.")
+                completedFocus = false
+            
+                //Reset elapsed
+                focusTimeElapsed = 0
+                breakTimeElapsed = 0
+            }
+        
+        
         
         //Toggle between focus and break
         focusTime.toggle()
@@ -78,9 +91,9 @@ class TimerManager: ObservableObject { //to watch for changes
         
         //Switch to timer of either focus or duration
         if focusTime {
-            timeRemaining = focusDuration
+            timeRemaining = Int(userSettings.defaultFocusDuration*60)
         } else {
-            timeRemaining = breakDuration
+            timeRemaining = Int(userSettings.defaultBreakDuration*60)
         }
         
         //Depending on which one has been switched to, print it

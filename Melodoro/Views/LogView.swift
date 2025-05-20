@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct LogView: View {
-    @ObservedObject var blogManager: SessionLogManager
+    @EnvironmentObject var logManager: SessionLogManager
     var body: some View {
         NavigationStack{
-            List {
-                ForEach(blogManager.logs.reversed()) {  log in
+            List {  
+                ForEach(logManager.logs.reversed()) {  log in
                     VStack{
                         Text(log.sessionDate.formatted())
                         Text("Focus: \(log.focusDuration) sec")
@@ -31,5 +31,5 @@ struct LogView: View {
 }
 
 #Preview {
-    LogView(blogManager: SessionLogManager())
+    LogView()
 }
