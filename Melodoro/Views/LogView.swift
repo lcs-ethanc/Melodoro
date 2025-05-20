@@ -10,8 +10,11 @@ import SwiftUI
 struct LogView: View {
     @EnvironmentObject var logManager: SessionLogManager
     var body: some View {
-        NavigationStack{
-            List {  
+        VStack{
+            Text("Session Logs")
+                            .font(.largeTitle)
+                            .bold()
+            List {
                 ForEach(logManager.logs.reversed()) {  log in
                     VStack{
                         Text(log.sessionDate.formatted())
@@ -25,11 +28,11 @@ struct LogView: View {
                     }
                 }
             }
-        } .navigationTitle("Session Logs")
+        } .padding()
         
     }
 }
-
-#Preview {
-    LogView()
-}
+//
+//#Preview {
+//    LogView()
+//}
