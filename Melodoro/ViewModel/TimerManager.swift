@@ -10,7 +10,7 @@ import Foundation
 class TimerManager: ObservableObject { //to watch for changes
     var timer: Timer?
     @Published var timeRemaining: Int //to refresh whenever changed
-    var running: Bool = false
+    @Published var running: Bool = false
     @Published var focusTime: Bool = true
     
     let focusDuration: Int

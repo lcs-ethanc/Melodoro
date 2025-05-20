@@ -33,9 +33,16 @@ struct TimerView: View {
                 .font(.system(size:48, weight: .bold))
             
             HStack{
-                Button("Start") {
-                    timerManager.start()
-                }
+                if timerManager.running {
+                        Button("Skip") {
+                            timerManager.switchMode()
+                            timerManager.pause()
+                        }
+                    } else {
+                        Button("Start") {
+                            timerManager.start()
+                        }
+                    }
                 Button("Pause") {
                     timerManager.pause()
                 }
