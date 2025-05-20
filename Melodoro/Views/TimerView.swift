@@ -50,6 +50,26 @@ struct TimerView: View {
             HStack{
                 if timerManager.running {
                         Button("Skip") {
+                            // Only log if time has actually passed
+                                if timerManager.timeElapsed > 0 {
+                                    var focusTimeLogged = 0
+                                    var breakTimeLogged = 0
+
+                                    if timerManager.focusTime {
+                                        focusTimeLogged = timerManager.timeElapsed
+                                    } else {
+                                        breakTimeLogged = timerManager.timeElapsed
+                                    }
+
+                                    timerManager.sessionLogManager.addLog(
+                                        focus: focusTimeLogged,
+                                        breakTime: breakTimeLogged,
+                                        completed: false
+                                    )
+                                    
+                                    // Reset the elapsed timer
+                                    timerManager.timeElapsed = 0
+                                }
                             
                             timerManager.switchMode()
                             timerManager.pause()
