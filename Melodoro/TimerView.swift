@@ -7,7 +7,15 @@
 
 import SwiftUI
 
-struct LandingView: View {
+struct TimerView: View {
+    @State var timerManager = TimerManager(
+        timeRemaining: 1500,
+        running: false,
+        focusTime: true,
+        focusDuration: 1500,
+        breakDuration: 300
+    )
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +28,5 @@ struct LandingView: View {
 }
 
 #Preview {
-    LandingView()
+    TimerView()
 }
