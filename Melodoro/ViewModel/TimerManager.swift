@@ -7,11 +7,11 @@
 
 import Foundation
 
-class TimerManager {
+class TimerManager: ObservableObject { //to watch for changes
     var timer: Timer?
-    var timeRemaining: Int
+    @Published var timeRemaining: Int //to refresh whenever changed
     var running: Bool = false
-    var focusTime: Bool = true
+    @Published var focusTime: Bool = true
     
     let focusDuration: Int
     let breakDuration: Int
@@ -26,6 +26,10 @@ class TimerManager {
     }
     
     func start () {
+        
+        if running{
+            return
+        }
         running = true //Timer is running
         
         //Timer repeats every 1 second
