@@ -16,13 +16,21 @@ class TimerManager: ObservableObject { //to watch for changes
     let focusDuration: Int
     let breakDuration: Int
     
-    init(timer: Timer? = nil, timeRemaining: Int, running: Bool, focusTime: Bool, focusDuration: Int, breakDuration: Int) {
+    var sessionLogManager: SessionLogManager 
+    
+    var timeElapsed: Int = 0
+    var completedFocus = false
+    
+    init(timer: Timer? = nil, timeRemaining: Int, running: Bool, focusTime: Bool, focusDuration: Int, breakDuration: Int, sessionLogManager: SessionLogManager, timeElapsed: Int, completedFocus: Bool = false) {
         self.timer = timer
         self.timeRemaining = timeRemaining
         self.running = running
         self.focusTime = focusTime
         self.focusDuration = focusDuration
         self.breakDuration = breakDuration
+        self.sessionLogManager = sessionLogManager
+        self.timeElapsed = timeElapsed
+        self.completedFocus = completedFocus
     }
     
     func start () {
@@ -38,6 +46,7 @@ class TimerManager: ObservableObject { //to watch for changes
             //If timer is above 0, minus one to timer (self = this instance)
             if self.timeRemaining > 0 {
                 self.timeRemaining += -1
+                self.timeElapsed += 1
                 print("Time remaining: \(self.timeRemaining)")
             } else {
                 self.switchMode()
@@ -49,8 +58,23 @@ class TimerManager: ObservableObject { //to watch for changes
         //Stop timer
         pause()
         
+        if focusTime == false && completedFocus {
+            sessionLogManager.addLog(
+                focus: focusDuration,
+                breakTime: breakDuration,
+                    completed: true
+                )
+                print("Logged a completed cycle.")
+                completedFocus = false
+            }
         //Toggle between focus and break
         focusTime.toggle()
+        
+        //Set completed focus to true if from focus to break
+        if !focusTime {
+            completedFocus = true
+        }
+
         
         //Switch to timer of either focus or duration
         if focusTime {

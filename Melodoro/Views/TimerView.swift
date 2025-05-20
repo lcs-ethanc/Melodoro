@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct TimerView: View {
-    
     @ObservedObject var alogManager: SessionLogManager
-    @ObservedObject var timerManager = TimerManager(
-        timeRemaining: 1500,
-        running: false,
-        focusTime: true,
-        focusDuration: 1500,
-        breakDuration: 300
-    )
+    @ObservedObject var timerManager: TimerManager
     @State var soundOn = true
     
+    init(alogManager: SessionLogManager) {
+        self.alogManager = alogManager
+        self.timerManager = TimerManager(
+            timeRemaining: 1500,
+            running: false,
+            focusTime: true,
+            focusDuration: 1500,
+            breakDuration: 300,
+            sessionLogManager: alogManager, // 👈 You pass it into the timer
+            timeElapsed: 0
+        )
+    }
     var body: some View {
         VStack {
             Button(action: {
@@ -45,6 +50,7 @@ struct TimerView: View {
             HStack{
                 if timerManager.running {
                         Button("Skip") {
+                            
                             timerManager.switchMode()
                             timerManager.pause()
                         }
