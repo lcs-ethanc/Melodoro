@@ -18,12 +18,24 @@ struct TimerView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            //Mode text
+            if timerManager.focusTime {
+                Text("Focus Time")
+                    .font(.title)
+            } else{
+                Text("Break Time")
+                    .font(.title)
+            }
+            
+            Text(formattedTime)
         }
         .padding()
+    }
+    var formattedTime: String{
+        let minutes = timerManager.timeRemaining / 60
+        let seconds = timerManager.timeRemaining % 60
+        return String(format: "%02d:%02d", minutes, seconds)
     }
 }
 

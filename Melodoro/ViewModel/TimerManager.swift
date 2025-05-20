@@ -55,7 +55,12 @@ class TimerManager {
             timeRemaining = breakDuration
         }
         
-        print ("Switched to \(focusTime ? "Focus" : "Break") mode")
+        //Depending on which one has been switched to, print it
+        if focusTime {
+            print("Switched to Focus mode")
+        } else {
+            print("Switched to Break Mode")
+        }
         
         //Start timer
         start()
