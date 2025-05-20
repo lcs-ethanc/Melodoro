@@ -10,7 +10,23 @@ import SwiftUI
 struct LogView: View {
     @ObservedObject var blogManager: SessionLogManager
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List {
+                ForEach(blogManager.logs) {  log in
+                    VStack{
+                        Text(log.sessionDate.formatted())
+                        Text("Focus: \(log.focusDuration) sec")
+                        Text("Break: \(log.breakDuration) sec")
+                        if log.completed {
+                            Text("Completed")
+                        } else {
+                            Text("Skipped")
+                        }
+                    }
+                }
+            }
+        } .navigationTitle("Session Logs")
+        
     }
 }
 
