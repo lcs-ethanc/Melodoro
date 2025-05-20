@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var userSettings = UserSettings(
+    
+    @State var userSettings = UserSettings(
         defaultFocusDuration: 25,
         defaultBreakDuration: 5,
         genreToggles: [
@@ -26,6 +27,17 @@ struct SettingsView: View {
     var body: some View {
         Text("Timer Durations")
                             .font(.headline)
+        HStack{
+            VStack(alignment: .leading) {
+                Text("Focus Time: \(userSettings.defaultFocusDuration.formatted()) min")
+                Slider(value: $userSettings.defaultFocusDuration, in: 5...60, step: 1)
+                           }
+            VStack(alignment: .leading) {
+                Text("Break Time: \(userSettings.defaultBreakDuration.formatted()) min")
+                Slider(value: $userSettings.defaultBreakDuration, in: 1...30, step: 1)
+                           }
+        }
+  
     }
 }
 
