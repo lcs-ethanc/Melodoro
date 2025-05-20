@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TimerView: View {
+    
+    @ObservedObject var alogManager: SessionLogManager
     @ObservedObject var timerManager = TimerManager(
         timeRemaining: 1500,
         running: false,
@@ -67,5 +69,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    TimerView()
+    TimerView(alogManager: SessionLogManager())
 }

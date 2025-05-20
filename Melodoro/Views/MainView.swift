@@ -9,13 +9,14 @@ import SwiftUI
 
 struct MainView: View {
     @State var selectedPage = 1
-    
+    @StateObject var logManager = SessionLogManager()
     var body: some View {
         TabView(selection:$selectedPage){
             SettingsView()
                 .tag(0)
-            TimerView()
+            TimerView(alogManager: logManager)
                 .tag(1)
+            LogView(blogManager: logManager)
         }
 
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
