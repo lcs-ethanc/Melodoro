@@ -15,7 +15,7 @@ struct SessionLog: Identifiable, Codable {
     let completed: Bool
     
     init(
-        id: UUID,
+        id: UUID = UUID(),
         sessionDate: Date,
         focusDuration: Int,
         breakDuration: Int,
