@@ -21,5 +21,15 @@ class UserSettings: ObservableObject {
         self.defaultBreakDuration = defaultBreakDuration
         self.genreToggles = genreToggles
     }
+    
+    func enabledGenres() -> [String] { //will return an array of string
+        genreToggles
+            .filter { pair in //filters out pairs with toggle turned to true
+            pair.value == true
+        }
+            .map { pair in //makes a list of genre names (keys)
+                pair.key
+            }
+    }
 }
 
