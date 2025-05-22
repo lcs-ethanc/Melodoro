@@ -16,6 +16,7 @@
 		440B662A2DDC2A40005DC7A6 /* SessionLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440B66292DDC2A40005DC7A6 /* SessionLogManager.swift */; };
 		440B66312DDE2B92005DC7A6 /* Acknowledgements in Resources */ = {isa = PBXBuildFile; fileRef = 440B66302DDE2B8C005DC7A6 /* Acknowledgements */; };
 		440B66332DDFE485005DC7A6 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440B66322DDFE485005DC7A6 /* MusicPlayer.swift */; };
+		441F5DC92DDFEBA60073567F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F5DC82DDFEBA60073567F /* MusicManager.swift */; };
 		4460A0272DB43519008888FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0242DB43519008888FA /* TimerView.swift */; };
 		4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0252DB43519008888FA /* MelodoroApp.swift */; };
 		4460A0292DB43519008888FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4460A0212DB43519008888FA /* Preview Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		440B66292DDC2A40005DC7A6 /* SessionLogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLogManager.swift; sourceTree = "<group>"; };
 		440B66302DDE2B8C005DC7A6 /* Acknowledgements */ = {isa = PBXFileReference; lastKnownFileType = text; path = Acknowledgements; sourceTree = "<group>"; };
 		440B66322DDFE485005DC7A6 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		441F5DC82DDFEBA60073567F /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 		4460A0102DB434F5008888FA /* Melodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4460A0212DB43519008888FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4460A0232DB43519008888FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				440B66212DDB8C00005DC7A6 /* TimerManager.swift */,
 				440B66292DDC2A40005DC7A6 /* SessionLogManager.swift */,
+				441F5DC82DDFEBA60073567F /* MusicManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				440B66262DDC219D005DC7A6 /* SettingsView.swift in Sources */,
 				440B66242DDC2161005DC7A6 /* MainView.swift in Sources */,
 				440B661E2DDA3CC3005DC7A6 /* UserSettings.swift in Sources */,
+				441F5DC92DDFEBA60073567F /* MusicManager.swift in Sources */,
 				4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */,
 				440B662A2DDC2A40005DC7A6 /* SessionLogManager.swift in Sources */,
 				440B66222DDB8C00005DC7A6 /* TimerManager.swift in Sources */,
