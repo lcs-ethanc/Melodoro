@@ -25,4 +25,7 @@ class MusicPlayer {
             print("Failed to play music: \(error)")
         }
     }
+    func stopMusic() {
+        audioPlayer?.stop()
+    }
 }
