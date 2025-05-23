@@ -11,7 +11,7 @@ struct TimerView: View {
     @EnvironmentObject var alogManager: SessionLogManager
     @StateObject var timerManager: TimerManager
     @EnvironmentObject var userSettings: UserSettings
-
+    
     @State var soundOn = true
     
     @EnvironmentObject var musicManager : MusicManager
@@ -19,58 +19,65 @@ struct TimerView: View {
     var body: some View {
         VStack {
             Button(action: {
-                                soundOn.toggle()
-                            }) {
-                                Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
-                                    .foregroundColor(.primary)
-                                    .frame(width:24,height:24)
-                            }
-                            .padding()
-
-            //Mode text
-            if timerManager.focusTime {
-                Text("Focus Time")
-                    .font(.title)
-            } else{
-                Text("Break Time")
-                    .font(.title)
-            }
-            //Countdown text
-            Text(formattedTime)
-                .font(.system(size:48, weight: .bold))
-            
-            HStack{
-                if timerManager.running {
-                        Button("Skip") {
-                            timerManager.switchMode()
-                            timerManager.pause()
-                            musicManager.stopMusic()
+                soundOn.toggle()
+                if soundOn == true { //if sound toggle is on
+                    if timerManager.running { //if the timer is running
+                        musicManager.playRandomGenre(genres:  userSettings.enabledGenres())//play music
+                                                     }
+                                                     } else { //if sound toggle off
+                            musicManager.stopMusic() //stop music
                         }
-                    } else {
-                        Button("Start") {
-                            timerManager.start()
-                            if soundOn {
-                                musicManager.playRandomGenre(genres: userSettings.enabledGenres())
+                                                     }) {
+                            Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                                .foregroundColor(.primary)
+                                .frame(width:24,height:24)
+                        }
+                                                     .padding()
+                        
+                        //Mode text
+                        if timerManager.focusTime {
+                            Text("Focus Time")
+                                .font(.title)
+                        } else{
+                            Text("Break Time")
+                                .font(.title)
+                        }
+                        //Countdown text
+                        Text(formattedTime)
+                            .font(.system(size:48, weight: .bold))
+                        
+                        HStack{
+                            if timerManager.running {
+                                Button("Skip") {
+                                    timerManager.switchMode()
+                                    timerManager.pause()
+                                    musicManager.stopMusic()
+                                }
+                            } else {
+                                Button("Start") {
+                                    timerManager.start()
+                                    if soundOn {
+                                        musicManager.playRandomGenre(genres: userSettings.enabledGenres())
+                                    }
+                                }
+                            }
+                            Button("Pause") {
+                                timerManager.pause()
+                                musicManager.stopMusic()
                             }
                         }
                     }
-                Button("Pause") {
-                    timerManager.pause()
-                    musicManager.stopMusic()
+                        .padding()
+                    
+                }
+                var formattedTime: String{
+                    let minutes = timerManager.timeRemaining / 60
+                    let seconds = timerManager.timeRemaining % 60
+                    return String(format: "%02d:%02d", minutes, seconds)
                 }
             }
-        }
-        .padding()
-
-    }
-    var formattedTime: String{
-        let minutes = timerManager.timeRemaining / 60
-        let seconds = timerManager.timeRemaining % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-}
-
-//#Preview {
-//    TimerView(alogManager: SessionLogManager()
-//    )
-//}
+                   
+                   //#Preview {
+                   //    TimerView(alogManager: SessionLogManager()
+                   //    )
+                   //}
