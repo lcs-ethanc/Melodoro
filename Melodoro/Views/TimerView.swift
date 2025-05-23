@@ -14,6 +14,8 @@ struct TimerView: View {
 
     @State var soundOn = true
     
+    @EnvironmentObject var musicManager : MusicManager
+    
     var body: some View {
         VStack {
             Button(action: {
@@ -42,14 +44,19 @@ struct TimerView: View {
                         Button("Skip") {
                             timerManager.switchMode()
                             timerManager.pause()
+                            musicManager.stopMusic()
                         }
                     } else {
                         Button("Start") {
                             timerManager.start()
+                            if soundOn {
+                                musicManager.playRandomGenre(genres: userSettings.enabledGenres())
+                            }
                         }
                     }
                 Button("Pause") {
                     timerManager.pause()
+                    musicManager.stopMusic()
                 }
             }
         }

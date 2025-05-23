@@ -17,6 +17,14 @@
 		440B66312DDE2B92005DC7A6 /* Acknowledgements in Resources */ = {isa = PBXBuildFile; fileRef = 440B66302DDE2B8C005DC7A6 /* Acknowledgements */; };
 		440B66332DDFE485005DC7A6 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440B66322DDFE485005DC7A6 /* MusicPlayer.swift */; };
 		441F5DC92DDFEBA60073567F /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F5DC82DDFEBA60073567F /* MusicManager.swift */; };
+		441F5DD22DE0A7DB0073567F /* Techno.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DD12DE0A7DB0073567F /* Techno.mp3 */; };
+		441F5DD32DE0A7DB0073567F /* Classical.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DCB2DE0A7DB0073567F /* Classical.mp3 */; };
+		441F5DD42DE0A7DB0073567F /* Instrumental.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DCC2DE0A7DB0073567F /* Instrumental.mp3 */; };
+		441F5DD52DE0A7DB0073567F /* Ambience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DCA2DE0A7DB0073567F /* Ambience.mp3 */; };
+		441F5DD62DE0A7DB0073567F /* Jazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DCD2DE0A7DB0073567F /* Jazz.mp3 */; };
+		441F5DD72DE0A7DB0073567F /* Lofi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DCE2DE0A7DB0073567F /* Lofi.mp3 */; };
+		441F5DD82DE0A7DB0073567F /* Piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DD02DE0A7DB0073567F /* Piano.mp3 */; };
+		441F5DD92DE0A7DB0073567F /* Nature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 441F5DCF2DE0A7DB0073567F /* Nature.mp3 */; };
 		4460A0272DB43519008888FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0242DB43519008888FA /* TimerView.swift */; };
 		4460A0282DB43519008888FA /* MelodoroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4460A0252DB43519008888FA /* MelodoroApp.swift */; };
 		4460A0292DB43519008888FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4460A0212DB43519008888FA /* Preview Assets.xcassets */; };
@@ -35,6 +43,14 @@
 		440B66302DDE2B8C005DC7A6 /* Acknowledgements */ = {isa = PBXFileReference; lastKnownFileType = text; path = Acknowledgements; sourceTree = "<group>"; };
 		440B66322DDFE485005DC7A6 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		441F5DC82DDFEBA60073567F /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
+		441F5DCA2DE0A7DB0073567F /* Ambience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ambience.mp3; sourceTree = "<group>"; };
+		441F5DCB2DE0A7DB0073567F /* Classical.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Classical.mp3; sourceTree = "<group>"; };
+		441F5DCC2DE0A7DB0073567F /* Instrumental.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Instrumental.mp3; sourceTree = "<group>"; };
+		441F5DCD2DE0A7DB0073567F /* Jazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jazz.mp3; sourceTree = "<group>"; };
+		441F5DCE2DE0A7DB0073567F /* Lofi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Lofi.mp3; sourceTree = "<group>"; };
+		441F5DCF2DE0A7DB0073567F /* Nature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Nature.mp3; sourceTree = "<group>"; };
+		441F5DD02DE0A7DB0073567F /* Piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano.mp3; sourceTree = "<group>"; };
+		441F5DD12DE0A7DB0073567F /* Techno.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Techno.mp3; sourceTree = "<group>"; };
 		4460A0102DB434F5008888FA /* Melodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4460A0212DB43519008888FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4460A0232DB43519008888FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +97,14 @@
 		4460A0262DB43519008888FA /* Melodoro */ = {
 			isa = PBXGroup;
 			children = (
+				441F5DCA2DE0A7DB0073567F /* Ambience.mp3 */,
+				441F5DCB2DE0A7DB0073567F /* Classical.mp3 */,
+				441F5DCC2DE0A7DB0073567F /* Instrumental.mp3 */,
+				441F5DCD2DE0A7DB0073567F /* Jazz.mp3 */,
+				441F5DCE2DE0A7DB0073567F /* Lofi.mp3 */,
+				441F5DCF2DE0A7DB0073567F /* Nature.mp3 */,
+				441F5DD02DE0A7DB0073567F /* Piano.mp3 */,
+				441F5DD12DE0A7DB0073567F /* Techno.mp3 */,
 				440B66302DDE2B8C005DC7A6 /* Acknowledgements */,
 				4460A0252DB43519008888FA /* MelodoroApp.swift */,
 				440B66322DDFE485005DC7A6 /* MusicPlayer.swift */,
@@ -188,6 +212,14 @@
 				4460A0292DB43519008888FA /* Preview Assets.xcassets in Resources */,
 				4460A02A2DB43519008888FA /* Assets.xcassets in Resources */,
 				440B66312DDE2B92005DC7A6 /* Acknowledgements in Resources */,
+				441F5DD22DE0A7DB0073567F /* Techno.mp3 in Resources */,
+				441F5DD32DE0A7DB0073567F /* Classical.mp3 in Resources */,
+				441F5DD42DE0A7DB0073567F /* Instrumental.mp3 in Resources */,
+				441F5DD52DE0A7DB0073567F /* Ambience.mp3 in Resources */,
+				441F5DD62DE0A7DB0073567F /* Jazz.mp3 in Resources */,
+				441F5DD72DE0A7DB0073567F /* Lofi.mp3 in Resources */,
+				441F5DD82DE0A7DB0073567F /* Piano.mp3 in Resources */,
+				441F5DD92DE0A7DB0073567F /* Nature.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

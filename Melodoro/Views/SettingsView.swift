@@ -28,6 +28,7 @@ struct SettingsView: View {
             } .padding()
             HStack{
                 Toggle("Piano", isOn: userSettings.binding(genre:"Piano"))
+                Toggle("Lofi", isOn: userSettings.binding(genre:"Lofi"))
             }
         }
 

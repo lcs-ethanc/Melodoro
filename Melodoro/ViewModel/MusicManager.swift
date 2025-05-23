@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MusicManager {
+class MusicManager: ObservableObject {
     let musicPlayer = MusicPlayer() //holds instance of musicplayer
     
     func playRandomGenre(genres: [String]) { //function that takes in a list of genres (string)

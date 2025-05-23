@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var musicManager = MusicManager()
     @State var selectedPage = 1
     @StateObject var logManager = SessionLogManager()
     @StateObject var userSettings = UserSettings(
@@ -44,6 +45,7 @@ struct MainView: View {
         }
         .environmentObject(userSettings)
         .environmentObject(logManager)
+        .environmentObject(musicManager)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
