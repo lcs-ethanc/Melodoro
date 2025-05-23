@@ -42,6 +42,7 @@ struct MainView: View {
             )
                 .tag(1)
             LogView()
+                .tag(2)
         }
         .environmentObject(userSettings)
         .environmentObject(logManager)
