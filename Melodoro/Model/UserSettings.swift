@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class UserSettings: ObservableObject {
     @Published var defaultFocusDuration: Double
@@ -31,5 +32,21 @@ class UserSettings: ObservableObject {
                 pair.key
             }
     }
+    func binding(genre: String) -> Binding<Bool> {
+        return Binding<Bool>(
+            get: {
+                if let value = self.genreToggles[genre] { //check if genre exists
+                    return value // return the genre
+                } else {
+                    return false // if not found, default to false
+                }
+            },
+            set: { newValue in
+                //updates true/false of the actual item in the list
+                self.genreToggles[genre] = newValue
+            }
+        )
+    }
+
 }
 

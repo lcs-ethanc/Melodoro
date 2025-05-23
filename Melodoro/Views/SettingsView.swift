@@ -24,7 +24,11 @@ struct SettingsView: View {
                     Text("Break Time: \(userSettings.defaultBreakDuration.formatted()) min")
                     Slider(value: $userSettings.defaultBreakDuration, in: 1...30, step: 1)
                                }
+                
             } .padding()
+            HStack{
+                Toggle("Piano", isOn: userSettings.binding(genre:"Piano"))
+            }
         }
 
   
