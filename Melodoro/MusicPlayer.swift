@@ -28,4 +28,12 @@ class MusicPlayer {
     func stopMusic() {
         audioPlayer?.stop()
     }
+    
+    func pauseMusic() {
+        audioPlayer?.pause()
+    }
+    
+    func resumeMusic() {
+        audioPlayer?.play()
+    }
 }

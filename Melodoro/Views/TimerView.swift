@@ -22,10 +22,10 @@ struct TimerView: View {
                 soundOn.toggle()
                 if soundOn == true { //if sound toggle is on
                     if timerManager.running { //if the timer is running
-                        musicManager.playRandomGenre(genres:  userSettings.enabledGenres())//play music
+                        musicManager.musicPlayer.resumeMusic()//play music
                                                      }
                                                      } else { //if sound toggle off
-                            musicManager.stopMusic() //stop music
+                        musicManager.musicPlayer.pauseMusic() //stop music
                         }
                                                      }) {
                             Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
