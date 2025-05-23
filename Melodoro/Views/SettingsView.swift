@@ -26,26 +26,27 @@ struct SettingsView: View {
                                }
                 
             } .padding()
+            Text("Music Genre Range")
+                .font(.headline)
+                .padding()
+            
             HStack{
-                Toggle("Piano", isOn: userSettings.binding(genre:"Piano"))
-                                   .toggleStyle(.button)
-                                   .background(userSettings.genreToggles["Piano"] == true ? Color.green : Color.red) //if its on: green, else: red
-                                   .clipShape(RoundedRectangle(cornerRadius: 10))
-                                   .foregroundColor(.black)
-                                   .font(.system(size:20))
-                Toggle("Lofi", isOn: userSettings.binding(genre:"Lofi"))
+                GenreToggle(genre: "Piano", userSettings: userSettings)
+                    
+                GenreToggle(genre: "Lofi", userSettings: userSettings)
+                  
             }
             HStack{
-                Toggle("Classical", isOn: userSettings.binding(genre:"Classical"))
-                Toggle("Jazz", isOn: userSettings.binding(genre:"Jazz"))
+                GenreToggle(genre: "Classical", userSettings: userSettings)
+                GenreToggle(genre: "Jazz", userSettings: userSettings)
             }
             HStack{
-                Toggle("Techno", isOn: userSettings.binding(genre:"Techno"))
-                Toggle("Nature", isOn: userSettings.binding(genre:"Nature"))
+                GenreToggle(genre: "Techno", userSettings: userSettings)
+                GenreToggle(genre: "Nature", userSettings: userSettings)
             }
             HStack{
-                Toggle("Instrumental", isOn: userSettings.binding(genre:"Instrumental"))
-                Toggle("Ambient", isOn: userSettings.binding(genre:"Ambient"))
+                GenreToggle(genre: "Instrumental", userSettings: userSettings)
+                GenreToggle(genre: "Ambient", userSettings: userSettings)
             }
         }
 

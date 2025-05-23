@@ -17,6 +17,7 @@ struct GenreToggle: View{
             .background(userSettings.genreToggles[genre] == true ? Color.green : Color.red)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .foregroundColor(.black)
+            .frame(width:200, height:75)
             .font(.system(size:20))
     }
     
