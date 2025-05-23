@@ -28,6 +28,11 @@ struct SettingsView: View {
             } .padding()
             HStack{
                 Toggle("Piano", isOn: userSettings.binding(genre:"Piano"))
+                                   .toggleStyle(.button)
+                                   .background(userSettings.genreToggles["Piano"] == true ? Color.green : Color.red) //if its on: green, else: red
+                                   .clipShape(RoundedRectangle(cornerRadius: 10))
+                                   .foregroundColor(.black)
+                                   .font(.system(size:20))
                 Toggle("Lofi", isOn: userSettings.binding(genre:"Lofi"))
             }
             HStack{
