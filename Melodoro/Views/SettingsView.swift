@@ -30,6 +30,18 @@ struct SettingsView: View {
                 Toggle("Piano", isOn: userSettings.binding(genre:"Piano"))
                 Toggle("Lofi", isOn: userSettings.binding(genre:"Lofi"))
             }
+            HStack{
+                Toggle("Classical", isOn: userSettings.binding(genre:"Classical"))
+                Toggle("Jazz", isOn: userSettings.binding(genre:"Jazz"))
+            }
+            HStack{
+                Toggle("Techno", isOn: userSettings.binding(genre:"Techno"))
+                Toggle("Nature", isOn: userSettings.binding(genre:"Nature"))
+            }
+            HStack{
+                Toggle("Instrumental", isOn: userSettings.binding(genre:"Instrumental"))
+                Toggle("Ambient", isOn: userSettings.binding(genre:"Ambient"))
+            }
         }
 
   
