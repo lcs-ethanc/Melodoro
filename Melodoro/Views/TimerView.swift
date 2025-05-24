@@ -96,7 +96,6 @@ struct TimerView: View {
                     if timerManager.running {
                         Button("Skip") {
                             timerManager.switchMode()
-                            timerManager.pause()
                             musicManager.stopMusic()
                         } .foregroundColor(.black)
                     } else {

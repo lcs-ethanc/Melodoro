@@ -103,8 +103,6 @@ class TimerManager: ObservableObject { //to watch for changes
             print("Switched to Break Mode")
         }
         
-        //Start timer
-        start()
     }
     
     func pause() {
