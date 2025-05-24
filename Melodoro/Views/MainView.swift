@@ -48,6 +48,7 @@ struct MainView: View {
         .environmentObject(logManager)
         .environmentObject(musicManager)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .ignoresSafeArea() //fills entire screen
     }
 }
 

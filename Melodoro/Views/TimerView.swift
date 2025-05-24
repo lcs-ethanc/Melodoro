@@ -17,67 +17,72 @@ struct TimerView: View {
     @EnvironmentObject var musicManager : MusicManager
     
     var body: some View {
-        VStack {
-            Button(action: {
-                soundOn.toggle()
-                if soundOn == true { //if sound toggle is on
-                    if timerManager.running { //if the timer is running
-                        musicManager.musicPlayer.resumeMusic()//play music
-                                                     }
-                                                     } else { //if sound toggle off
+        ZStack{
+            Color.blue.opacity(0.2)
+                .ignoresSafeArea()
+            VStack {
+                Button(action: {
+                    soundOn.toggle()
+                    if soundOn == true { //if sound toggle is on
+                        if timerManager.running { //if the timer is running
+                            musicManager.musicPlayer.resumeMusic()//play music
+                        }
+                    } else { //if sound toggle off
                         musicManager.musicPlayer.pauseMusic() //stop music
+                    }
+                }) {
+                    Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
+                        .foregroundColor(.primary)
+                        .frame(width:24,height:24)
+                }
+                .padding()
+                
+                //Mode text
+                if timerManager.focusTime {
+                    Text("Focus Time")
+                        .font(.title)
+                } else{
+                    Text("Break Time")
+                        .font(.title)
+                }
+                //Countdown text
+                Text(formattedTime)
+                    .font(.system(size:48, weight: .bold))
+                
+                HStack{
+                    if timerManager.running {
+                        Button("Skip") {
+                            timerManager.switchMode()
+                            timerManager.pause()
+                            musicManager.stopMusic()
                         }
-                                                     }) {
-                            Image(systemName: soundOn ? "speaker.wave.2.fill" : "speaker.slash.fill")
-                                .foregroundColor(.primary)
-                                .frame(width:24,height:24)
-                        }
-                                                     .padding()
-                        
-                        //Mode text
-                        if timerManager.focusTime {
-                            Text("Focus Time")
-                                .font(.title)
-                        } else{
-                            Text("Break Time")
-                                .font(.title)
-                        }
-                        //Countdown text
-                        Text(formattedTime)
-                            .font(.system(size:48, weight: .bold))
-                        
-                        HStack{
-                            if timerManager.running {
-                                Button("Skip") {
-                                    timerManager.switchMode()
-                                    timerManager.pause()
-                                    musicManager.stopMusic()
-                                }
-                            } else {
-                                Button("Start") {
-                                    timerManager.start()
-                                    if soundOn {
-                                        musicManager.playRandomGenre(genres: userSettings.enabledGenres())
-                                    }
-                                }
-                            }
-                            Button("Pause") {
-                                timerManager.pause()
-                                musicManager.stopMusic()
+                    } else {
+                        Button("Start") {
+                            timerManager.start()
+                            if soundOn {
+                                musicManager.playRandomGenre(genres: userSettings.enabledGenres())
                             }
                         }
                     }
-                        .padding()
-                    
-                }
-                var formattedTime: String{
-                    let minutes = timerManager.timeRemaining / 60
-                    let seconds = timerManager.timeRemaining % 60
-                    return String(format: "%02d:%02d", minutes, seconds)
+                    Button("Pause") {
+                        timerManager.pause()
+                        musicManager.stopMusic()
+                    }
                 }
             }
-                   
-                   //#Preview {
-                   //    TimerView(alogManager: SessionLogManager()
-                   //    )
-                   //}
+            .padding()
+        }
+        
+    }
+    var formattedTime: String{
+        let minutes = timerManager.timeRemaining / 60
+        let seconds = timerManager.timeRemaining % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+}
+
+//#Preview {
+//    TimerView(alogManager: SessionLogManager()
+//    )
+//}

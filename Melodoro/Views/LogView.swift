@@ -10,25 +10,32 @@ import SwiftUI
 struct LogView: View {
     @EnvironmentObject var logManager: SessionLogManager
     var body: some View {
-        VStack{
-            Text("Session Logs")
-                            .font(.largeTitle)
-                            .bold()
-            List {
-                ForEach(logManager.logs.reversed()) {  log in
-                    VStack{
-                        Text(log.sessionDate.formatted())
-                        Text("Focus: \(log.focusDuration) sec")
-                        Text("Break: \(log.breakDuration) sec")
-                        if log.completed {
-                            Text("Completed")
-                        } else {
-                            Text("Skipped")
+        ZStack{
+            Color.orange.opacity(0.3)
+                .ignoresSafeArea()
+            VStack{
+                Text("Session Logs")
+                    .font(.largeTitle)
+                    .bold()
+                List {
+                    ForEach(logManager.logs.reversed()) {  log in
+                        VStack{
+                            Text(log.sessionDate.formatted())
+                            Text("Focus: \(log.focusDuration) sec")
+                            Text("Break: \(log.breakDuration) sec")
+                            if log.completed {
+                                Text("Completed")
+                            } else {
+                                Text("Skipped")
+                            }
                         }
+                        .cornerRadius(10)
                     }
                 }
-            }
-        } .padding()
+                .scrollContentBackground(.hidden) // hide default list background
+                .background(Color.clear) // transparent
+            } .padding()
+        }
         
     }
 }
