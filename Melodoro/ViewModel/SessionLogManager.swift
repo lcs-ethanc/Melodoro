@@ -10,7 +10,7 @@ import Foundation
 class SessionLogManager: ObservableObject{
     @Published var logs: [SessionLog] = [] //list of session logs
     
-    private var savePath: URL {
+    var savePath: URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0].appendingPathComponent("SessionLogs.json")
     }
