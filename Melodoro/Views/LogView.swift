@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogView: View {
-    @EnvironmentObject var logManager: SessionLogManager
+    @ObservedObject var logManager: SessionLogManager
     var body: some View {
         ZStack{
             Color.orange.opacity(0.3)

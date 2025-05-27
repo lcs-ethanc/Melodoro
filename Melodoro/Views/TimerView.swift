@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TimerView: View {
-    @EnvironmentObject var alogManager: SessionLogManager
     @StateObject var timerManager: TimerManager
     @EnvironmentObject var userSettings: UserSettings
     

@@ -41,11 +41,10 @@ struct MainView: View {
                 )
             )
                 .tag(1)
-            LogView()
+            LogView(logManager: logManager)
                 .tag(2)
         }
         .environmentObject(userSettings)
-        .environmentObject(logManager)
         .environmentObject(musicManager)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .ignoresSafeArea() //fills entire screen
